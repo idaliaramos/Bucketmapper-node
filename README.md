@@ -1,5 +1,5 @@
 # Bucketmapper-node
-Api/database where you can store details about your upcoming or dream places to visit. Easily organize your travel details in a visually engagin list with notes for each place!
+Api/database where you can store details about your upcoming or dream places to visit. Easily organize your travel details in a visually engaging list with notes for each place!
 
 
 ![bucketmapper-login](https://user-images.githubusercontent.com/24365319/35661142-0bccd0e2-06c5-11e8-8f0f-5746618b2f6a.png)
@@ -31,17 +31,17 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-What things you need to install as needed
-Node.js
-PostgreSQL
-Express
-Knex
+Please intall:
+* Node.js
+* PostgreSQL
+* Express
+* Knex
 
 ### Installing
 
-Once you have the prerequisites, run npm install and then reset-db, reset db will run the commands needed to start a database for you locally.
+Once you have the prerequisites, run `npm install` and then `reset-db`, reset db will run the commands needed to start a database for you locally.
 
-Once you have your db ready, run the server using the npm start command
+Once you have your db ready, run the server using the `npm start` command
 
 ## Deployment
 
