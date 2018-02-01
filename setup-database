@@ -1,0 +1,2 @@
+createuser -E -P bucketmapper_admin
+createdb -O bucketmapper_admin bucketmapper_dev
