@@ -38,14 +38,14 @@ Once you have your db ready, run the server using the `npm start` command
 
 Once youve started the server by running `npm start`, you can make requests to localhost:8000.
 Here are some routes you can play with!
-###### REGISTER (POST)
-- `http -p HBhb POST localhost:8000/users name=xxxx email=xxxx@mail.com password=xxxx`
-###### LOGIN- this will return a jwt token to authenticate you as a user to continue using the application
-- `http -p HBhb POST localhost:8000/authenticate email=xxxx@mail.com password=xxxx`
-###### POST a destination
-- `http -p HBhb POST localhost:8000/users/your id/destinations name=Mexico 'Authorization:Bearer xxxxxxxxxxxxxxxxxxxx'`
-###### GET destinations. You can decode the jwt token at https://jwt.io/ to find your user Id if you wish to add destinations to your board
-- `http -p HBhb GET localhost:8000/users/your id/destinations 'Authorization: Bearer xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'`
+###### REGISTER (POST)Password must be at least 6 digits
+- `http -p HBhb POST localhost:8000/users name=xxxx email=xxxx@mail.com password=xxxxxx`
+###### LOGIN- this will return a jwt token to authenticate you as a user to continue using the application. 
+- `http -p HBhb POST localhost:8000/authenticate email=xxxx@mail.com password=xxxxxx`
+###### POST a destination. You can decode the jwt token at https://jwt.io/ to find your user Id if you wish to add destinations
+- `http -p HBhb POST localhost:8000/users/YOURID/destinations name=Mexico 'Authorization:Bearer xxxxxxxxxxxxxxxxxxxx'`
+###### GET destinations.  to your board
+- `http -p HBhb GET localhost:8000/users/YOURID/destinations 'Authorization: Bearer xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'`
 ###### DELETE a destination
 - `http -p HBhb DELETE localhost:8000/destinations/destinationId 'Authorization:Bearer xxxxxxxxxxxxxxxxxxxx'`
 
