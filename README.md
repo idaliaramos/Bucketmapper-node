@@ -6,7 +6,6 @@ Api/database where you can store details about your upcoming or dream places to 
 ![bucketmapper-maui-adventurepage](https://user-images.githubusercontent.com/24365319/35661138-08408752-06c5-11e8-9d05-c8efa5b21b26.png)
 
 
-
 ## Restful API Built With
 
 * Node.js
@@ -22,10 +21,8 @@ http -p HBhb POST localhost:8000/users name=xxxx email=xxxx@mail.com password=xx
 http -p HBhb POST localhost:8000/authenticate email=xxxx@mail.com password=xxxx
 * POST a destination
 http -p HBhb POST localhost:8000/users/your id/destinations name=Mexico 'Authorization:Bearer xxxxxxxxxxxxxxxxxxxx'
-
 * GET a destination you can decode the jwt token at https://jwt.io/ to find your user Id if you wish to add destinations to your board
 http -p HBhb GET localhost:8000/users/your id/destinations 'Authorization: Bearer xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
-
 * DELETE  a destination
 http -p HBhb DELETE localhost:8000/destinations/destinationId 'Authorization:Bearer xxxxxxxxxxxxxxxxxxxx'
 ## Getting Started 
@@ -34,34 +31,34 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
-
-```
-Give examples
-```
+What things you need to install as needed
+Node.js
+PostgreSQL
+Express
+Knex
 
 ### Installing
 
-A step by step series of examples that tell you have to get a development env running
+Once you have the prerequisites, run npm install and then reset-db, reset db will run the commands needed to start a database for you locally.
 
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
+Once you have your db ready, run the server using the npm start command
 
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
+Once youve started the server by running `npm start`, you can make requests to localhost:8000.
+Here are some routes you can play with!
+* REGISTER (POST)
+http -p HBhb POST localhost:8000/users name=xxxx email=xxxx@mail.com password=xxxx
+* LOGIN- this will return a jwt token to authenticate you as a user to continue using the application
+http -p HBhb POST localhost:8000/authenticate email=xxxx@mail.com password=xxxx
+* POST a destination
+http -p HBhb POST localhost:8000/users/your id/destinations name=Mexico 'Authorization:Bearer xxxxxxxxxxxxxxxxxxxx'
+
+* GET a destination you can decode the jwt token at https://jwt.io/ to find your user Id if you wish to add destinations to your board
+http -p HBhb GET localhost:8000/users/your id/destinations 'Authorization: Bearer xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+
+* DELETE  a destination
+http -p HBhb DELETE localhost:8000/destinations/destinationId 'Authorization:Bearer xxxxxxxxxxxxxxxxxxxx'
 
 
 
