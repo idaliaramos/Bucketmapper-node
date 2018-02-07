@@ -8,44 +8,56 @@ React Front-End to BucketMapper can be found in the BucketMapper-react repo
 ![bucketmapper-maui-adventurepage](https://user-images.githubusercontent.com/24365319/35661138-08408752-06c5-11e8-9d05-c8efa5b21b26.png)
 
 ## You can checkout out the video demo!
-* https://youtu.be/uZnB0rddpPc
+https://youtu.be/WHEZ7_zwioc
 ## Restful API Built With
 
 * Node.js
 * PostgreSQL
-* knex
-* express
+* Knex
+* Express
 
 ## Getting Started 
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-### Prerequisites
 
-Please install:
-* Node.js
-* PostgreSQL
-* Express
-* Knex
+### Setup
+```
+# install node
+npm install node
+# install PostgreSQL : to create a database
+npm install pg
+# install express : quick way to start your server
+npm install express
+# install Knex : Object Relational Model(ORM)
+npm install knex
 
-### Installing
 
-Once you have the prerequisites, run `npm install` and then `open setup-database`, followed by `npm run reset-db`.
+# install all of the dependencies
+npm install
+ 
+# runs scripts to create to create db
+open setup-database
 
-Once you have your db ready, run the server using the `npm start` command
+# runs schema migrations
+npm run reset-db
 
-## Deployment
+# starts the server
+npm start
 
-Once youve started the server by running `npm start`, you can make requests to localhost:8000.
+``` 
+
+## Making Requests
+You can make requests to localhost:8000.
 Here are some routes you can play with!
-###### REGISTER (POST)
-- `http -p HBhb POST localhost:8000/users name=xxxx email=xxxx@mail.com password=xxxx`
-###### LOGIN- this will return a jwt token to authenticate you as a user to continue using the application
-- `http -p HBhb POST localhost:8000/authenticate email=xxxx@mail.com password=xxxx`
-###### POST a destination
-- `http -p HBhb POST localhost:8000/users/your id/destinations name=Mexico 'Authorization:Bearer xxxxxxxxxxxxxxxxxxxx'`
-###### GET destinations. You can decode the jwt token at https://jwt.io/ to find your user Id if you wish to add destinations to your board
-- `http -p HBhb GET localhost:8000/users/your id/destinations 'Authorization: Bearer xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'`
+###### REGISTER (POST)Password must be at least 6 digits
+- `http -p HBhb POST localhost:8000/users name=xxxx email=xxxx@mail.com password=xxxxxx`
+###### LOGIN- this will return a jwt token to authenticate you as a user to continue using the application. 
+- `http -p HBhb POST localhost:8000/authenticate email=xxxx@mail.com password=xxxxxx`
+###### POST a destination. You can decode the jwt token at https://jwt.io/ to find your user Id if you wish to add destinations
+- `http -p HBhb POST localhost:8000/users/YOURID/destinations name=Mexico 'Authorization:Bearer xxxxxxxxxxxxxxxxxxxx'`
+###### GET destinations.  to your board
+- `http -p HBhb GET localhost:8000/users/YOURID/destinations 'Authorization: Bearer xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'`
 ###### DELETE a destination
 - `http -p HBhb DELETE localhost:8000/destinations/destinationId 'Authorization:Bearer xxxxxxxxxxxxxxxxxxxx'`
 
