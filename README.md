@@ -13,30 +13,42 @@ https://youtu.be/WHEZ7_zwioc
 
 * Node.js
 * PostgreSQL
-* knex
-* express
+* Knex
+* Express
 
 ## Getting Started 
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-### Prerequisites
 
-Please install:
-* Node.js
-* PostgreSQL
-* Express
-* Knex
+### Setup
+```
+# install node
+npm install node
+# install PostgreSQL : to create a database
+npm install pg
+# install express : quick way to start your server
+npm install express
+# install Knex : Object Relational Model(ORM)
+npm install knex
 
-### Installing
 
-Once you have the prerequisites, run `npm install` and then `open setup-database`, followed by `npm run reset-db`.
+# install all of the dependencies
+npm install
+ 
+# runs scripts to create to create db
+open setup-database
 
-Once you have your db ready, run the server using the `npm start` command
+# runs schema migrations
+npm run reset-db
 
-## Deployment
+# starts the server
+npm start
 
-Once youve started the server by running `npm start`, you can make requests to localhost:8000.
+``` 
+
+## Making Requests
+You can make requests to localhost:8000.
 Here are some routes you can play with!
 ###### REGISTER (POST)Password must be at least 6 digits
 - `http -p HBhb POST localhost:8000/users name=xxxx email=xxxx@mail.com password=xxxxxx`
